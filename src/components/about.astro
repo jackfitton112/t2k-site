@@ -1,0 +1,39 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Thringarth Barn",
+    description:
+      "The team at T2K Group have been a pleasure to work with. They have been very professional and have delivered a high quality product. We would highly recommend them to anyone looking for a new website.",
+  },
+  {
+    title: "Cadet Concrete",
+    description:
+      "T2K Group are wonderful, the team are very professional and explained everything in detail. we would recommend them to anyone looking for a new website.",
+  },
+  {
+    title: "Web Design Customer",
+    description:
+      "T2K Group went above and beyond delivering a high quality teaching tool used in my lectures every day. I would highly recommend them wholeheartedly.",
+  },
+
+];
+---
+
+<ContentSection title="Testimonials" id="testimonials">
+  <Fragment slot="lead">
+    We never cut corners, <span class="text-primary">but don't take our word for it</span>
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description}) => (
+        <li class="flex flex-col items-center gap-4 p-6 border border-default bg-offset">
+          <p class="text-xl font-extrabold text-center">{title}</p>
+          <p class="text-sm text-center text-offset">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
